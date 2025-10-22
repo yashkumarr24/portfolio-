@@ -193,9 +193,17 @@
 }
 
 @media (max-width: 768px) {
+  .contact {
+    padding: 2rem 1rem;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
   .contact-content {
     grid-template-columns: 1fr;
     gap: 2rem;
+    width: 100%;
   }
 
   .contact-title {

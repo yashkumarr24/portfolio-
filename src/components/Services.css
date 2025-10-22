@@ -164,6 +164,9 @@
   .services {
     padding: 2rem 1rem;
     min-height: 50vh;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
   
   .info-banner {

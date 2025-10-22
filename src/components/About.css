@@ -104,9 +104,17 @@
 }
 
 @media (max-width: 768px) {
+  .about {
+    padding: 2rem 1rem;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
   .about-container {
     grid-template-columns: 1fr;
     gap: 2rem;
+    width: 100%;
   }
 
   .image-wrapper {
