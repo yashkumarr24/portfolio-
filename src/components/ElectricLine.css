@@ -1,0 +1,213 @@
+/* Electric Line Container */
+.electric-line-container {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  margin: 2rem 0;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.electric-line-container.top {
+  margin: 1rem 0 2rem 0;
+}
+
+.electric-line-container.center {
+  margin: 3rem 0;
+}
+
+.electric-line-container.bottom {
+  margin: 2rem 0 1rem 0;
+}
+
+/* Main Electric Line */
+.electric-line {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 20%,
+    #ffffff 30%,
+    #ffffff 70%,
+    transparent 80%,
+    transparent 100%
+  );
+  border-radius: 2px;
+  box-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.6),
+    0 0 30px rgba(255, 255, 255, 0.4),
+    0 0 40px rgba(255, 255, 255, 0.2);
+}
+
+/* Electric Shine Animation */
+.electric-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 30%,
+    rgba(255, 255, 255, 0.8) 40%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0.8) 60%,
+    transparent 70%,
+    transparent 100%
+  );
+  animation: electricRun 2s ease-in-out infinite;
+  border-radius: 2px;
+}
+
+/* Electric Sparks */
+.electric-sparks {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  transform: translateY(-50%);
+}
+
+.spark {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+  animation: sparkFlicker 0.5s ease-in-out infinite alternate;
+}
+
+.spark-1 {
+  left: 10%;
+  animation-delay: 0s;
+  animation-duration: 0.3s;
+}
+
+.spark-2 {
+  left: 25%;
+  animation-delay: 0.1s;
+  animation-duration: 0.4s;
+}
+
+.spark-3 {
+  left: 50%;
+  animation-delay: 0.2s;
+  animation-duration: 0.35s;
+}
+
+.spark-4 {
+  left: 75%;
+  animation-delay: 0.15s;
+  animation-duration: 0.25s;
+}
+
+.spark-5 {
+  left: 90%;
+  animation-delay: 0.3s;
+  animation-duration: 0.45s;
+}
+
+/* Electric Glow Effect */
+.electric-glow {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  transform: translateY(-50%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 20%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.1) 80%,
+    transparent 100%
+  );
+  filter: blur(2px);
+  animation: electricPulse 1.5s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes electricRun {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes sparkFlicker {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes electricPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(-50%) scale(1.1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .electric-line-container {
+    height: 3px;
+    margin: 1.5rem 0;
+  }
+  
+  .electric-line {
+    box-shadow: 
+      0 0 8px rgba(255, 255, 255, 0.6),
+      0 0 16px rgba(255, 255, 255, 0.4),
+      0 0 24px rgba(255, 255, 255, 0.2);
+  }
+  
+  .spark {
+    width: 1.5px;
+    height: 1.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .electric-line-container {
+    height: 2px;
+    margin: 1rem 0;
+  }
+  
+  .electric-line {
+    box-shadow: 
+      0 0 6px rgba(255, 255, 255, 0.5),
+      0 0 12px rgba(255, 255, 255, 0.3);
+  }
+  
+  .spark {
+    width: 1px;
+    height: 1px;
+  }
+}
+

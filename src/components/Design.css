@@ -1,0 +1,417 @@
+.design {
+  min-height: 70vh;
+  padding: 4rem 2rem;
+  background: #000000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.design-container {
+  max-width: 1400px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+/* Graphics Icon */
+.graphics-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.icon-wrapper {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 68, 68, 0.1);
+  border: 1px solid rgba(255, 68, 68, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.icon-label {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Main Title */
+.design-title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Tagline */
+.design-tagline {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Participation Line with Light Shine */
+.participation-line {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  margin: 2rem auto 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.line-shine {
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  width: 200%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 20%,
+    #FF4444 30%,
+    #FF6B6B 40%,
+    #FF8888 50%,
+    #FF6B6B 60%,
+    #FF4444 70%,
+    transparent 80%,
+    transparent 100%
+  );
+  transform: translateY(-50%);
+  animation: shineMove 3s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(255, 68, 68, 0.6), 0 0 40px rgba(255, 107, 107, 0.4);
+}
+
+.participation-text {
+  position: relative;
+  z-index: 2;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #FF4444;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(255, 68, 68, 0.5);
+  animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes shineMove {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes textGlow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 68, 68, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255, 68, 68, 0.8), 0 0 30px rgba(255, 107, 107, 0.4);
+  }
+}
+
+/* Design Cards Container */
+.design-cards-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  perspective: 1000px;
+  overflow: visible;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3in; /* 0.3 inch gap between all images */
+}
+
+.design-cards {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  gap: 0.3in; /* 0.3 inch gap between all images */
+}
+
+/* Individual Design Cards */
+.design-card {
+  position: relative;
+  width: 200px;
+  height: 250px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.card-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  padding: 1rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.design-card:hover .card-overlay {
+  transform: translateY(0);
+}
+
+.design-card:hover .card-image {
+  transform: scale(1.1);
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.card-subtitle {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.design-card:hover {
+  transform: translateY(-10px) rotateX(5deg) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+/* 2x Concave Mirror Effect - Deep bowl curve */
+.card-1 {
+  transform: rotateY(50deg) rotateX(-16deg);
+}
+
+.card-2 {
+  transform: rotateY(40deg) rotateX(-12deg);
+}
+
+.card-3 {
+  transform: rotateY(30deg) rotateX(-8deg);
+}
+
+.card-4 {
+  transform: rotateY(20deg) rotateX(-4deg);
+}
+
+.card-5 {
+  transform: rotateY(10deg) rotateX(-2deg);
+}
+
+.card-6 {
+  transform: rotateY(0deg) rotateX(0deg); /* Center card - no rotation */
+}
+
+.card-7 {
+  transform: rotateY(-10deg) rotateX(-2deg);
+}
+
+.card-8 {
+  transform: rotateY(-20deg) rotateX(-4deg);
+}
+
+.card-9 {
+  transform: rotateY(-30deg) rotateX(-8deg);
+}
+
+.card-10 {
+  transform: rotateY(-40deg) rotateX(-12deg);
+}
+
+.card-11 {
+  transform: rotateY(-50deg) rotateX(-16deg);
+}
+
+/* WhatsApp icon removed */
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .participation-line {
+    height: 70px;
+    margin: 1.5rem auto 2.5rem;
+  }
+  
+  .participation-text {
+    font-size: 1.3rem;
+  }
+  
+  .design-cards-container {
+    height: 380px;
+    padding: 0 1rem;
+    gap: 0.3in; /* Maintain 0.3 inch gap */
+  }
+  
+  .design-card {
+    width: 180px;
+    height: 230px;
+  }
+  
+  /* Maintain 2x concave mirror effect on tablets */
+  .card-1 { transform: rotateY(40deg) rotateX(-12deg); }
+  .card-2 { transform: rotateY(32deg) rotateX(-10deg); }
+  .card-3 { transform: rotateY(24deg) rotateX(-6deg); }
+  .card-4 { transform: rotateY(16deg) rotateX(-4deg); }
+  .card-5 { transform: rotateY(8deg) rotateX(-2deg); }
+  .card-6 { transform: rotateY(0deg) rotateX(0deg); }
+  .card-7 { transform: rotateY(-8deg) rotateX(-2deg); }
+  .card-8 { transform: rotateY(-16deg) rotateX(-4deg); }
+  .card-9 { transform: rotateY(-24deg) rotateX(-6deg); }
+  .card-10 { transform: rotateY(-32deg) rotateX(-10deg); }
+  .card-11 { transform: rotateY(-40deg) rotateX(-12deg); }
+}
+
+@media (max-width: 768px) {
+  .design {
+    padding: 3rem 0.5rem;
+    min-height: 60vh;
+  }
+  
+  .design-title {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+  
+  .design-tagline {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    margin-bottom: 2.5rem;
+  }
+  
+  .participation-line {
+    height: 60px;
+    margin: 1rem auto 2rem;
+  }
+  
+  .participation-text {
+    font-size: 1.1rem;
+  }
+  
+  .line-shine {
+    height: 1.5px;
+    box-shadow: 0 0 15px rgba(255, 68, 68, 0.5), 0 0 30px rgba(255, 107, 107, 0.3);
+  }
+  
+  .design-cards-container {
+    height: 320px;
+    padding: 0 0.5rem;
+    gap: 0.3in; /* Maintain 0.3 inch gap */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  }
+  
+  .design-card {
+    width: 150px;
+    height: 190px;
+  }
+  
+  /* Maintain 2x concave mirror effect on mobile */
+  .card-1 { transform: rotateY(30deg) rotateX(-8deg); }
+  .card-2 { transform: rotateY(24deg) rotateX(-6deg); }
+  .card-3 { transform: rotateY(18deg) rotateX(-4deg); }
+  .card-4 { transform: rotateY(12deg) rotateX(-2deg); }
+  .card-5 { transform: rotateY(6deg) rotateX(-1deg); }
+  .card-6 { transform: rotateY(0deg) rotateX(0deg); }
+  .card-7 { transform: rotateY(-6deg) rotateX(-1deg); }
+  .card-8 { transform: rotateY(-12deg) rotateX(-2deg); }
+  .card-9 { transform: rotateY(-18deg) rotateX(-4deg); }
+  .card-10 { transform: rotateY(-24deg) rotateX(-6deg); }
+  .card-11 { transform: rotateY(-30deg) rotateX(-8deg); }
+}
+
+@media (max-width: 480px) {
+  .design {
+    padding: 2rem 0.5rem;
+    min-height: 50vh;
+  }
+  
+  .participation-line {
+    height: 50px;
+    margin: 0.8rem auto 1.5rem;
+  }
+  
+  .participation-text {
+    font-size: 1rem;
+  }
+  
+  .line-shine {
+    height: 1px;
+    box-shadow: 0 0 10px rgba(255, 68, 68, 0.4), 0 0 20px rgba(255, 107, 107, 0.2);
+  }
+  
+  .design-cards-container {
+    height: 280px;
+    padding: 0 0.5rem;
+    gap: 0.3in; /* Maintain 0.3 inch gap */
+    flex-wrap: wrap; /* Allow wrapping on mobile */
+  }
+  
+  .design-card {
+    width: 120px;
+    height: 160px;
+  }
+  
+  /* Maintain 2x concave mirror effect on small mobile */
+  .card-1 { transform: rotateY(20deg) rotateX(-6deg); }
+  .card-2 { transform: rotateY(16deg) rotateX(-4deg); }
+  .card-3 { transform: rotateY(12deg) rotateX(-3deg); }
+  .card-4 { transform: rotateY(8deg) rotateX(-2deg); }
+  .card-5 { transform: rotateY(4deg) rotateX(-1deg); }
+  .card-6 { transform: rotateY(0deg) rotateX(0deg); }
+  .card-7 { transform: rotateY(-4deg) rotateX(-1deg); }
+  .card-8 { transform: rotateY(-8deg) rotateX(-2deg); }
+  .card-9 { transform: rotateY(-12deg) rotateX(-3deg); }
+  .card-10 { transform: rotateY(-16deg) rotateX(-4deg); }
+  .card-11 { transform: rotateY(-20deg) rotateX(-6deg); }
+  
+  .whatsapp-icon {
+    width: 50px;
+    height: 50px;
+    bottom: 1rem;
+    right: 1rem;
+  }
+  
+  .whatsapp-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+}
