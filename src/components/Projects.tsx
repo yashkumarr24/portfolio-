@@ -8,15 +8,17 @@ const Projects: React.FC = () => {
       id: 1,
       title: 'Finance Consultancy',
       description: 'Financial Consultancy for small and medium enterprises',
-      image: '/images/image-2.webp',
-      tags: ['react', 'javascript', 'html', 'css']
+      image: '/images/cover.webp',
+      tags: ['react', 'javascript', 'html', 'css'],
+      liveUrl: 'https://www.conceptgroups.in/'
     },
     {
       id: 2,
       title: 'Interactive Dashboard',
       description: 'Real-time analytics with stunning visualizations',
-      image: '/images/image-3.webp',
-      tags: ['React', 'D3.js', 'MongoDB']
+      image: '/images/image-14.webp',
+      tags: ['React', 'D3.js', 'MongoDB'],
+      liveUrl: 'https://www.conceptgroups.in/'
     }
   ];
 
@@ -48,10 +50,22 @@ const Projects: React.FC = () => {
               whileHover={{ y: -10 }}
             >
               <div className="project-image-wrapper">
-                <img src={project.image} alt={project.title} loading="lazy" decoding="async" />
-                <div className="project-overlay">
-                  <button className="view-project-btn">View Project →</button>
-                </div>
+                <img src={`${project.image}?v=${Date.now()}`} alt={project.title} loading="lazy" decoding="async" />
+                <a 
+                  href={project.liveUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="project-overlay"
+                >
+                  <div className="view-project-content">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15,3 21,3 21,9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    <span>View Project</span>
+                  </div>
+                </a>
               </div>
               <div className="project-info">
                 <h3 className="project-title">{project.title}</h3>
@@ -60,6 +74,21 @@ const Projects: React.FC = () => {
                   {project.tags.map((tag) => (
                     <span key={tag} className="project-tag">{tag}</span>
                   ))}
+                </div>
+                <div className="project-actions">
+                  <a 
+                    href={project.liveUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="live-website-btn"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15,3 21,3 21,9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    Live Website
+                  </a>
                 </div>
               </div>
               
